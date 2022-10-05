@@ -1,4 +1,3 @@
-/* asad danial asad     
-sb
-benzi
-//mai
+# include< iostream>
+int main a 34 + 90 q++
+auto break case char const 1qwe
