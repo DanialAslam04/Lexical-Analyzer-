@@ -1,3 +1,5 @@
-# include< iostream>
-int main a 34 + 90 q++
-auto break case char const 1qwe
+a=5
+// This is checkers game
+/*intmain()
+a=5;
+b=9-0;*/
