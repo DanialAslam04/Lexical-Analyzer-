@@ -1,6 +1,7 @@
 import nltk  # For tokenization
 import re # For regular expression
 
+
 # file opening
 def file(): 
     f = open('file.txt')
@@ -65,43 +66,53 @@ def checkSymbols(prog):
     else:
         return False
 
-    
 obj=file()
-
-space_remo=removespaces(obj)    
-comment_remo=removecomments(space_remo)
-
-tokens = nltk.word_tokenize(comment_remo)
-
+space_remo='hjghjgfj'
+comment_remo=''
 keyword=[]
 identifier=[]
 constant=[]
 operator=[]
 symbol=[]
-fullytokenized=[]
+       
 
 
-for i,token in enumerate(tokens):
-    #print(i,token)
-    tokenC=nltk.wordpunct_tokenize(token)
-    #print(i,tokenC)
-    for i,token in enumerate(tokenC):
-        if(checkKeyword(token)):
-            keyword.append(token)
-        elif(checkIdentifier(token)):   
-            identifier.append(token)
-        elif(checkConstants(token)):
-            constant.append(token)  
-        elif(checkOperators(token)):   
-            operator.append(token)        
-        elif(checkSymbols(token)):   
-            symbol.append(token)        
+def start():    
+    #obj=file()
 
-print('identifiers', identifier)
-print('keyword', keyword)
-print('Contants', constant)
-print('Operators', operator) 
-print('Symbols', symbol) 
+
+    space_remo=removespaces(obj)    
+    comment_remo=removecomments(space_remo)
+
+    tokens = nltk.word_tokenize(comment_remo)
+
+    #fullytokenized=[]
+
+
+    for i,token in enumerate(tokens):
+        #print(i,token)
+        tokenC=nltk.wordpunct_tokenize(token)
+        #print(i,tokenC)
+        for i,token in enumerate(tokenC):
+            if(checkKeyword(token)):
+                keyword.append(token)
+            elif(checkIdentifier(token)):   
+                identifier.append(token)
+            elif(checkConstants(token)):
+                constant.append(token)  
+            elif(checkOperators(token)):   
+                operator.append(token)        
+            elif(checkSymbols(token)):   
+                symbol.append(token)   
+
+    print('identifiers', identifier)
+    print('keyword', keyword)
+    print('Contants', constant)
+    print('Operators', operator) 
+    print('Symbols', symbol) 
+
+
+
 
 # 
 #identifier(tokens)

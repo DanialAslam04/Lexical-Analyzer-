@@ -1,5 +1,7 @@
 from tkinter import *
+#from LA import *
 import LA as la
+#import LA.start as la
 
 root = Tk()
 root.title('Lexical Analyzer')
@@ -38,6 +40,17 @@ def clearTextWidget():  # Clear Both Text Widgets
     tb1.delete("1.0", "end")
     tb2.delete("1.0", "end")
 
+def out():
+    la.start()
+    tb2.insert(INSERT, "Space_Removed  "+la.space_remo+'\n')
+    tb2.insert(INSERT, 'Comments_Removed  '+la.comment_remo+'\n')
+    tb2.insert(INSERT,'Keyword  '+ str(la.keyword)+'\n')
+
+    tb2.insert(INSERT, 'Keyword  '+str(la.identifier)+'\n')
+
+    tb2.insert(INSERT, 'constant  '+str(la.constant)+'\n')
+    tb2.insert(INSERT, 'operators  '+str(la.operator)+'\n')
+    tb2.insert(INSERT, 'symbols  '+str(la.symbol)+'\n')
 
 
 file_button = Button(frame1,text="Open file", font="Helvetica 10 bold italic", command=openfile)
@@ -49,5 +62,6 @@ Clear_button.pack(side=LEFT, padx=20, pady=15)
 Close_button = Button(frame1,text="Close", font="Helvetica 10 bold italic", command=root.destroy)
 Close_button.pack(side=LEFT, padx=20, pady=15)
 
-
+Close_button = Button(frame1,text="Run", font="Helvetica 10 bold italic", command=out)
+Close_button.pack(side=LEFT, padx=20, pady=15)
 root.mainloop()
