@@ -8,7 +8,7 @@ def file():
     prog = f.read()
    # print('original',prog)
     return prog
-    f.close()
+    #f.close() # would be added in the clear button function
 
 # Removing whitespaces
 def removespaces(prog):
@@ -67,7 +67,7 @@ def checkSymbols(prog):
         return False
 
 obj=file()
-space_remo='hjghjgfj'
+space_remo=''
 comment_remo=''
 keyword=[]
 identifier=[]
@@ -75,24 +75,17 @@ constant=[]
 operator=[]
 symbol=[]
        
+space_remo=removespaces(obj)    
+comment_remo=removecomments(obj)
 
-
-def start():    
-    #obj=file()
-
-
-    space_remo=removespaces(obj)    
-    comment_remo=removecomments(space_remo)
-
+def start():
+    #space_remo=removespaces(obj)    
+    #comment_remo=removecomments(space_remo)
     tokens = nltk.word_tokenize(comment_remo)
-
-    #fullytokenized=[]
-
-
     for i,token in enumerate(tokens):
         #print(i,token)
         tokenC=nltk.wordpunct_tokenize(token)
-        #print(i,tokenC)
+        print(i,tokenC)
         for i,token in enumerate(tokenC):
             if(checkKeyword(token)):
                 keyword.append(token)
@@ -103,19 +96,5 @@ def start():
             elif(checkOperators(token)):   
                 operator.append(token)        
             elif(checkSymbols(token)):   
-                symbol.append(token)   
-
-    print('identifiers', identifier)
-    print('keyword', keyword)
-    print('Contants', constant)
-    print('Operators', operator) 
-    print('Symbols', symbol) 
-
-
-
-
-# 
-#identifier(tokens)
-#print(tokens)
-#tokens = nltk.word_tokenize(prog)
-    
+                symbol.append(token)
+            

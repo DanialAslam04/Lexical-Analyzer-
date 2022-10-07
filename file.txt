@@ -1,5 +1,2 @@
-a=5
-// This is checkers game
-/*intmain()
-a=5;
-b=9-0;*/
+#include<iostream>
+int a=1 b=2 4/9
