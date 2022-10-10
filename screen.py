@@ -16,7 +16,7 @@ frame3 = Frame(root, padx=10)
 frame3.pack(side=BOTTOM, anchor="s")
 
 mainlb=Label(root, text="............    Lexical Analyzer    ............", font=(74),borderwidth=14,background='#fff8d6', relief="ridge")
-mainlb.place(x = 450, y = 10) 
+mainlb.place(x = 490, y = 10) 
    
 inputlb=Label(frame1, text="... I N P U T ...", font=(74),borderwidth=8,background='#ffffff', relief="ridge")
 inputlb.pack(padx=2, pady=2)
@@ -36,9 +36,11 @@ def openfile():
 def clearTextWidget():  # Clear Both Text Widgets
     tb1.delete("1.0", "end")
     tb2.delete("1.0", "end")
-
+    
 def run():
-    #la.obj=tb1.get(0.0, "end-1c")
+    la.obj=tb1.get(0.0, "end-1c")
+    la.space_remo=la.removespaces(la.obj)    
+    la.comment_remo=la.removecomments(la.obj)
     la.start()
     tb2.insert(INSERT, "Space_Removed  "+str(la.space_remo)+'\n')
     tb2.insert(INSERT, 'Comments_Removed  '+str(la.comment_remo)+'\n')
