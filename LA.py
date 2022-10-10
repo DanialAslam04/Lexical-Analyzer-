@@ -26,7 +26,7 @@ def removecomments(prog):
 # checking keywords
 def checkKeyword(prog):
     RE_Keywords = "auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while|string|class|struc|include|main|iostream|conio|using|namespace|std"
-    if(re.match(RE_Keywords, str(prog))):
+    if(re.search(RE_Keywords, str(prog))):
         return True
     else:
         return False
@@ -67,6 +67,7 @@ def checkSymbols(prog):
         return False
 
 obj=file()
+objC=file()
 space_remo=''
 comment_remo=''
 keyword=[]

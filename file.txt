@@ -1,2 +1,9 @@
-#include<iostream>
-int a=1 b=2 4/9
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b;
+    //comments 
+    c=a+b;
+}
